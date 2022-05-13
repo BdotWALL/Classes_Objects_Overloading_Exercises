@@ -4,12 +4,23 @@ public class Book {
     private int publicationYear;
 
 
-        public Book(String title,  int pages, int pubYear) {
+        public Book (String title,  int pages, int pubYear) {
             this.bookTitle = title;
             this.numOfPages = pages; 
             this.publicationYear = pubYear;
 
         }
+
+//Constuctor overloading for if pubyear unknown
+        public Book ( String title, int pages) {
+            this(title, pages, 0000);
+        }
+
+ //Constuctor overloading for if pages and pubyeah unknown
+        public Book ( String title) {
+            this(title,  000, 0000);
+        }
+
 
         public String getName() {
             return this.bookTitle;

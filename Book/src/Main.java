@@ -1,25 +1,42 @@
 import java.util.Scanner;
+import java.util.ArrayList;
+
 
 public class Main {
     public static void main(String[] args) {
     Scanner scan = new Scanner(System.in);
+    ArrayList<Book> books = new ArrayList<>();
 
-    Book book1 = new Book("The 48 Laws of Power", 476,1998);
-    Book book2 = new Book("Dracula", 418, 1897);
-    Book book3 = new Book("Fahrenheit 451", 190, 2003);
-    
-    
+
+    books.add(new Book("The 48 Laws of Power", 476,1998));
+    books.add(new Book("Dracula", 488,1897));
+    books.add(new Book("Fahrenheit 451", 196, 2003));
+    books.add(new Book("The Great Gatsby", 288));
+    books.add(new Book("As A Man Thinketh", 56));
+    books.add(new Book("Monster"));
+    books.add(new Book("The Art of War"));
+
+
+    System.out.println("Welcome to the Book Database!");
     System.out.println("What would you like to print?");
-    System.out.println("Enter  ''everything'' to print everything and ''name'' to print titles only:");
+    System.out.println("Enter  ''everything'' to print all book info available and ''name'' to print titles only:");
     String allOrTitle = scan.nextLine();
     if (allOrTitle.equals("everything")) {
-      System.out.println(book1.toString() + "\n" + book2.toString() + "\n" +  book3.toString());
+      for (int i = 0; i < books.size(); i++) {
+        Book booklist = books.get(i);
+        System.out.println(booklist.getName() + ", " + booklist.getPages() + " pages, " + " published: " + booklist.getPubYear() );
+      }
+      
     }
 
-    if(allOrTitle.equals("name")) {
-      System.out.println(book1.getName() + "\n" + book2.getName() + "\n" + book3.getName());
+    if (allOrTitle.equals("name")) {
+    for (int i = 0; i < books.size(); i++) {
+      Book booklist = books.get(i);
+      System.out.println(booklist.getName());
     }
-
 
   }
+
+}
+
 }

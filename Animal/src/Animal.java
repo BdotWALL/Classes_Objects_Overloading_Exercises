@@ -1,6 +1,7 @@
 public class Animal {
     private String name;
     private String dogOrNot;
+    
 
        public Animal(String animalName, String isADog) {
            this.name = animalName;
@@ -8,6 +9,7 @@ public class Animal {
 
        }
 
+//Overloading constructor       
        public Animal(String animalName) {
            this(animalName, "yes");
        }
